@@ -7,9 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="login-form">
-        <input type="text" placeholder="What is your name?" /> <!-- 입력 요소 생성 -->
+    <form id="login-form">
+        <input required maxlength="15" type="text" placeholder="What is your name?" /> <!-- 입력 요소 생성 -->
         <button>Log In</button> <!-- 버튼 생성 -->
+    </form>
+    <h1 id="greeting" class="hidden"></h1>
     <script src="js/app.js"></script>
     </div>
 </body>
