@@ -32,15 +32,20 @@ function paintToDo(newTodo){
 
 function handleToDoSubmit(event){
     event.preventDefault();
-    const newTodo = toDoInput.value; // input의 값을 newTodo라는 변수에 복사
-    toDoInput.value = ""; // input의 값 초기화
-    const newTodoObj = {
-        text: newTodo,
-        id: Date.now(),
+    console.log(savedToDos);
+    if(localStorage.length > 10){
+        alert("Todo는 10개를 넘을 수 없습니다!");
+    } else {
+        const newTodo = toDoInput.value; // input의 값을 newTodo라는 변수에 복사
+        toDoInput.value = ""; // input의 값 초기화
+        const newTodoObj = {
+            text: newTodo,
+            id: Date.now(),
+        }
+        toDos.push(newTodoObj);  // array에 newTodoObj 넣기
+        paintToDo(newTodoObj);
+        saveToDos();
     }
-    toDos.push(newTodoObj);  // array에 newTodoObj 넣기
-    paintToDo(newTodoObj);
-    saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);

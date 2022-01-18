@@ -1,3 +1,5 @@
+const FullImage_CLASSNAME = "FullImage";
+
 const images = [
     "0.jpg",
     "1.jpg",
@@ -9,6 +11,8 @@ const chosenImage = images[Math.floor(Math.random() * images.length)]; // 랜덤
 const bgImage = document.createElement("img"); // img 라는 element를 생성
 
 bgImage.src = `img/${chosenImage}`;
+bgImage.classList.add(FullImage_CLASSNAME);
 
 // document.body.prepend(bgImage); // 이미지가 가장 위에 있게한다, appendChild는 가장 뒤에 있게 한다.
-document.body.appendChild(bgImage); // appendChild()는 body에 html을 추가한다.
+//document.body.appendChild(bgImage); // appendChild()는 body에 html을 추가한다.
+document.body.appendChild(bgImage);
